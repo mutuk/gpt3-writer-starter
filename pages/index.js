@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Write | Text to Summarizer to Twitter thread</title>
+        <title>GPT-3 Write | Text to Summarizer</title>
       </Head>
       <div className="container">
         <div className="header">
@@ -42,7 +42,7 @@ const Home = () => {
             <h1>Text summarizer</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Turn text into a twitter thread.</h2>
+            {/* <h2>Turn text into a twitter thread.</h2> */}
           </div>
         </div>
         <div className="prompt-container">
