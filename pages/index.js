@@ -39,7 +39,7 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Newsletter summarizer</h1>
+            <h1>Text summarizer</h1>
           </div>
           <div className="header-subtitle">
             <h2>Turn text into a twitter thread.</h2>
