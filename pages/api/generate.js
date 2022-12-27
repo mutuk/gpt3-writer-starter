@@ -7,9 +7,9 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix =
 `
-Summarize this text. Go deep and make it thought provoking. It should be an interesting read. 
-
-text:
+Give me 3 agenda items for a 1:1 with my direct report. I want to discuss regarding engagement. 
+The questions have to be conversational, insightful, deep, and detailed.
+Agenda items:
 `
 // const generateAction = async (req, res) => {
 //   // Run first prompt
@@ -28,10 +28,11 @@ const generateAction = async (req, res) => {
       model: 'text-davinci-003',
       prompt: `${basePromptPrefix}${req.body.userInput}`,
       temperature: 0.8,
-      max_tokens: 750,
+      max_tokens: 400,
     });
     const basePromptOutput = baseCompletion.data.choices.pop();
     console.log(basePromptOutput);
+    res.status(200).json({ output:  basePromptOutput});
     // I build Prompt #2.
     const secondPrompt = 
     `
@@ -57,10 +58,10 @@ const generateAction = async (req, res) => {
   });
   
   // Get the output
-  const secondPromptOutput = secondPromptCompletion.data.choices.pop();
+  // const secondPromptOutput = secondPromptCompletion.data.choices.pop();
 
   // Send over the Prompt #2's output to our UI instead of Prompt #1's.
-  res.status(200).json({ output: secondPromptOutput });
+  // res.status(200).json({ output: secondPromptOutput });
 };
 
 export default generateAction;
